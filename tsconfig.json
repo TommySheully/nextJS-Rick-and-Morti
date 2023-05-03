@@ -3,6 +3,7 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "baseUrl": ".",   // используется для импортов в файлах, теперь вместо '../../../и так далее", можно всегда стартовать из корня приложения.
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,7 +14,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@/types/*": ["./assets/types/*"] // это используется для настройки базого url для конкретного файла, что бы конкретному файлу упростить импорты. вместо '../types/Nullable'; теперь будет '@/types/Nullable';
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

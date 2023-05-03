@@ -21,7 +21,7 @@ export const CharacterCard = (props: PropsType) => {
   const { id, name, image, status } = props.character;
 
   return (
-    <Card name={name}>
+    <Card name={name} status={status}>
       <Link href={`/characters/${id}`}>
         <ImageBlock src={image} alt={name} width={300} height={300} priority />
       </Link>
