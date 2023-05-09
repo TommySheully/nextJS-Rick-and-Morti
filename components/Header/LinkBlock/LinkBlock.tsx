@@ -10,8 +10,8 @@ export const LinkBlock = (props: PropsType) => {
 
   return (
     <LinkWrapper>
-      <Link href={`/${title.toLowerCase()}`}>
-        <h2>{title} →</h2>
+      <Link href={`/${title.toLowerCase()}` } style={{ textDecoration: 'none', color:"black"}}>
+              <h2>{title}</h2>
       </Link>
     </LinkWrapper>
   );
@@ -19,8 +19,20 @@ export const LinkBlock = (props: PropsType) => {
 
 const LinkWrapper = styled.div`
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 5px;
   border: 1px solid rgba(131, 134, 135, 0);
+
+  &:hover {
+    background-color: #f39e55;
+    border-color: #2b2b2b;
+    padding: 0 30px;
+
+    border-width: 0;
+
+    & h2 {
+      color: white;
+    }
+  }
 
   & h2 {
     font-weight: 600;

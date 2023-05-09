@@ -10,11 +10,29 @@ export const Header = () => (
 )
 
 const Navbar = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 1280px;
-  max-width: 100%;
+  
+  height: 60px;
+  width: 100%;
+  
   margin: 0 auto;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: relative;
+
+  :after {
+    content: "";
+    position: absolute;
+
+    border-bottom: 3px solid #f3b188;
+    width: 100%;
+
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
 
   @media (max-width: 700px) {
     flex-direction: column;
