@@ -10,10 +10,10 @@ export const Header = () => (
 )
 
 const Navbar = styled.div`
-  
+
   height: 60px;
   width: 100%;
-  
+
   margin: 0 auto;
 
   display: flex;
@@ -26,7 +26,7 @@ const Navbar = styled.div`
     content: "";
     position: absolute;
 
-    border-bottom: 3px solid #f3b188;
+    border-bottom: 3px solid #1c1b1b;
     width: 100%;
 
     bottom: -10px;

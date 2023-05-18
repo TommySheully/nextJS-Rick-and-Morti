@@ -6,6 +6,7 @@ import {getLayout} from "components/Layout/BaseLayut/BaseLayout";
 import {GetStaticPaths, GetStaticProps} from "next";
 import {useRouter} from "next/router";
 import styled from "styled-components";
+import {InfoCard} from "../../components/Card/InfoCard";
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const {results} = await API.rickAndMorty.getCharacters()
@@ -51,9 +52,10 @@ const Character = (props: PropsType) => {
     return (
         <PageWrapper>
             <Main>
-
-                <IdText>ID: {characterId}</IdText>
-                <CharacterCard character={character} key={character.id}/>
+                <Box>
+                    <CharacterCard character={character} key={character.id}/>
+                    <InfoCard character={character} key={character.id}/>
+                </Box>
                 <Button onClick={goToCharacters}> GO TO CHARACTERS</Button>
             </Main>
         </PageWrapper>
@@ -62,9 +64,6 @@ const Character = (props: PropsType) => {
 Character.getLayout = getLayout
 export default Character;
 
-const IdText = styled.div`
-  font-size: 34px;
-`
 
 const Main = styled.div`
   display: flex;
@@ -73,16 +72,21 @@ const Main = styled.div`
   gap: 20px;
 `
 
+const Box = styled.div`
+  display: flex;
+  gap: 100px;
+`
+
 const Button = styled.button`
   width: 330px;
   height: 60px;
   border-radius: 4px;
   border: none;
-  background: #efaa74;
+  background: #736c6c;
   font-size: 24px;
 
   &:hover {
-    background: #d7772e;
+    background: #2a2929;
     color: white;
   }
 `

@@ -36,8 +36,8 @@ const CardBlock = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
-  border: 2px solid #f8c177;
-  box-shadow: 0 2px 3px 1px #ef8d25;
+  border: 2px solid #6e6c6c;
+  box-shadow: 0 2px 3px 1px #000000;
   border-radius: 15px;
 `;
 

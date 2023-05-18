@@ -23,7 +23,7 @@ const LinkWrapper = styled.div`
   border: 1px solid rgba(131, 134, 135, 0);
 
   &:hover {
-    background-color: #f39e55;
+    background-color: #2a2929;
     border-color: #2b2b2b;
     padding: 0 30px;
 
