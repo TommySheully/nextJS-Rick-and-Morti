@@ -4,11 +4,14 @@ import {CharacterType, ResponseType} from "assets/api/rick-and-morty-api";
 import {CharacterCard} from "components/Card/CharacterCard/CharacterCard";
 import {getLayout} from "components/Layout/BaseLayut/BaseLayout";
 import Pagination from "../../components/Pagination/Pagination";
-import styled from "styled-components";
+import {useRouter} from "next/router";
+import {GetServerSideProps} from "next";
 
 
-export const getStaticProps = async () => {
-    const characters = await API.rickAndMorty.getCharacters()
+export const getServerSideProps: GetServerSideProps<any> = async ({query}) => {
+    const {page = '1'} = query
+
+    const characters = await API.rickAndMorty.getCharacters({page: Number(page)})
 
     if (!characters) return {notFound: true}
 
@@ -26,6 +29,12 @@ type PropsType = {
 const Characters = (props: PropsType) => {
     const {characters} = props
 
+    const router = useRouter()
+    const queryPage = router.query.page
+
+    const currentPage = Number(queryPage) || 1
+
+
     const charactersList = characters.results.map(characters => (
         <CharacterCard character={characters} key={characters.id}/>
     ))
@@ -35,19 +44,11 @@ const Characters = (props: PropsType) => {
             <PageWrapper>
                 {charactersList}
             </PageWrapper>
-            <PagenationBlock>
-                <Pagination currentPage={1} totalCount={1}/>
-            </PagenationBlock>
+            <Pagination currentPage={currentPage} totalPage={characters.info.pages}/>
         </>
     )
 }
 
 Characters.getLayout = getLayout
-
-const PagenationBlock = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-`;
 
 export default Characters;

@@ -56,7 +56,7 @@ const Character = (props: PropsType) => {
                     <CharacterCard character={character} key={character.id}/>
                     <InfoCard character={character} key={character.id}/>
                 </Box>
-                <Button onClick={goToCharacters}> GO TO CHARACTERS</Button>
+                <Button onClick={goToCharacters}> GO TO LOCATIONS</Button>
             </Main>
         </PageWrapper>
     )

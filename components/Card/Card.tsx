@@ -22,7 +22,6 @@ export const Card = (props: PropsWithChildren<PropsType>) => {
 
     return (
         <CardBlock>
-
             <Name>
                 {name}
                 {status && <Status status={status} src={statusImages[status]}/>}
@@ -36,8 +35,8 @@ const CardBlock = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
-  border: 2px solid #6e6c6c;
-  box-shadow: 0 2px 3px 1px #000000;
+  border: 1px solid #6e6c6c;
+  box-shadow: 0 1px 1px 1px #000000;
   border-radius: 15px;
 `;
 

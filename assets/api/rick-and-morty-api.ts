@@ -49,7 +49,7 @@ export type ResponseType<T> = {
   results: T[];
 };
 
-type InfoType = {
+export type InfoType = {
   count: number;
   pages: number;
   next: Nullable<string>;
@@ -100,6 +100,6 @@ type ExtraDataType = {
   url: string;
 };
 
-type ParamsType = {
+export type ParamsType = {
   page: number;
 };

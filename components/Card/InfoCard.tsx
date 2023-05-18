@@ -13,10 +13,10 @@ export const InfoCard = (props: PropsType) => {
     return (
         <CardBlock>
             <Name>
-                <p>Species: {species}</p>
-                <p>Gender: {gender}</p>
-                <p>Origin: {origin.name}</p>
-                <p>Location: {location.name}</p>
+                <p>Species character: {species}</p>
+                <p>Gender character: {gender}</p>
+                <p>Origin character: {origin.name}</p>
+                <p>Location character: {location.name}</p>
               </Name>
         </CardBlock>
     );
