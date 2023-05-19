@@ -1,8 +1,8 @@
 import Head from "next/head";
 
 type PropsType = {
-  title?: string;
-};
+  title?: string
+}
 
 export const HeadMeta = (props: PropsType) => {
   const { title } = props;
@@ -13,9 +13,9 @@ export const HeadMeta = (props: PropsType) => {
 
   return (
     <Head>
-      <title>{title ?? "NextJS Master Class"}</title>
+      <title>{title ?? "Rick and Morty - Encyclopedia"}</title>
       <meta name="description" content={description} />
-      <link rel="icon" href="/favicon.svg" />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
-  );
-};
+  )
+}

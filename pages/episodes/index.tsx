@@ -1,11 +1,11 @@
 import {PageWrapper} from "components/PageWrapper/PageWrapper";
 import {API} from "assets/api/api";
 import {EpisodeType, ResponseType} from "assets/api/rick-and-morty-api";
-import {Card} from "components/Card/Card";
 import {getLayout} from "components/Layout/BaseLayut/BaseLayout";
 import {GetServerSideProps} from "next";
 import Pagination from "../../components/Pagination/Pagination";
 import {useRouter} from "next/router";
+import {EpisodeCard} from "../../components/Card/EpisodeCard/EpisodeCard";
 
 
 export const getServerSideProps: GetServerSideProps<any> = async ({query}) => {
@@ -35,7 +35,8 @@ const Episodes = (props: PropsType) => {
     const currentPage = Number(queryPage) || 1
 
     const episodesList = episodes.results.map(episodes => (
-        <Card name={episodes.name} key={episodes.id}/>
+        <EpisodeCard episodes={episodes} key={episodes.id}/>
+        //<Card name={episodes.name} key={episodes.id}/>
     ))
 
     return (<>

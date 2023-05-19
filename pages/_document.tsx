@@ -27,7 +27,7 @@ class MyDocument extends Document {
                 ),
             };
         } finally {
-            sheet.seal();
+            sheet.seal()
         }
     }
 
@@ -45,7 +45,7 @@ class MyDocument extends Document {
                 <NextScript />
                 </body>
             </Html>
-        );
+        )
     }
 }
 

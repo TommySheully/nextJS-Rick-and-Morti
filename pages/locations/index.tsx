@@ -1,6 +1,5 @@
 import {PageWrapper} from "components/PageWrapper/PageWrapper";
 import {LocationType, ResponseType} from "assets/api/rick-and-morty-api";
-import {Card} from "components/Card/Card";
 import {getLayout} from "components/Layout/BaseLayut/BaseLayout";
 import {GetServerSideProps} from "next";
 import Pagination from "../../components/Pagination/Pagination";
